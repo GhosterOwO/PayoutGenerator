@@ -1,0 +1,488 @@
+version: '3'
+
+x-common-variables: &common-variables
+    image: rng-tool
+    volumes:
+        - ./logs:/workspace/logs
+
+services:
+    set61:
+        <<: *common-variables
+        command: >
+          --range 1,26
+          --draws 20000000
+          --replacement yes
+          --selections 2
+          --name set61
+    set62:
+        <<: *common-variables
+        command: >
+          --range 1,40
+          --draws 50000000
+          --replacement yes
+          --selections 2
+          --name set62
+    set63:
+        <<: *common-variables
+        command: >
+          --range 1,61
+          --draws 50000000
+          --replacement yes
+          --selections 2
+          --name set63
+    set64:
+        <<: *common-variables
+        command: >
+          --range 1,93
+          --draws 100000000
+          --replacement yes
+          --selections 2
+          --name set64
+    set65:
+        <<: *common-variables
+        command: >
+          --range 1,142
+          --draws 200000000
+          --replacement yes
+          --selections 3
+          --name set65
+    set66:
+        <<: *common-variables
+        command: >
+          --range 1,218
+          --draws 200000000
+          --replacement yes
+          --selections 3
+          --name set66
+    set67:
+        <<: *common-variables
+        command: >
+          --range 1,334
+          --draws 500000000
+          --replacement yes
+          --selections 3
+          --name set67
+    set68:
+        <<: *common-variables
+        command: >
+          --range 1,445
+          --draws 500000000
+          --replacement yes
+          --selections 3
+          --name set68
+    set69:
+        <<: *common-variables
+        command: >
+          --range 1,512
+          --draws 500000000
+          --replacement yes
+          --selections 4
+          --name set69
+    set70:
+        <<: *common-variables
+        command: >
+          --range 1,631
+          --draws 500000000
+          --replacement yes
+          --selections 4
+          --name set70
+    set71:
+        <<: *common-variables
+        command: >
+          --range 1,757
+          --draws 500000000
+          --replacement yes
+          --selections 5
+          --name set71
+    set72:
+        <<: *common-variables
+        command: >
+          --range 1,1000
+          --draws 500000000
+          --replacement yes
+          --selections 5
+          --name set72
+    set73:
+        <<: *common-variables
+        command: >
+          --range 1,1000
+          --draws 1000000000
+          --replacement no
+          --selections 1
+          --name set73
+    set74:
+        <<: *common-variables
+        command: >
+          --range 1,1000000
+          --draws 1000000000
+          --replacement no
+          --selections 1
+          --name set74
+    set75:
+        <<: *common-variables
+        command: >
+          --range 1,52
+          --draws 50000000
+          --replacement no
+          --selections 52
+          --name set75
+    set76:
+        <<: *common-variables
+        command: >
+          --range 1,52
+          --draws 200000000
+          --replacement no
+          --selections 1
+          --name set76
+    set77:
+        <<: *common-variables
+        command: >
+          --range 1,3
+          --draws 2000000
+          --replacement no
+          --selections 1
+          --name set77
+    set14:
+        <<: *common-variables
+        command: >
+          --range 1,17
+          --draws 20000000
+          --replacement no
+          --selections 6
+          --name set14
+    set15:
+        <<: *common-variables
+        command: >
+          --range 1,26
+          --draws 20000000
+          --replacement no
+          --selections 6
+          --name set15
+    set16:
+        <<: *common-variables
+        command: >
+          --range 1,40
+          --draws 50000000
+          --replacement no
+          --selections 6
+          --name set16
+    set17:
+        <<: *common-variables
+        command: >
+          --range 1,68
+          --draws 100000000
+          --replacement no
+          --selections 6
+          --name set17
+    set18:
+        <<: *common-variables
+        command: >
+          --range 1,96
+          --draws 100000000
+          --replacement no
+          --selections 6
+          --name set18
+    set19:
+        <<: *common-variables
+        command: >
+          --range 1,149
+          --draws 200000000
+          --replacement no
+          --selections 6
+          --name set19
+    set20:
+        <<: *common-variables
+        command: >
+          --range 1,232
+          --draws 200000000
+          --replacement no
+          --selections 6
+          --name set20
+    set21:
+        <<: *common-variables
+        command: >
+          --range 1,256
+          --draws 200000000
+          --replacement no
+          --selections 6
+          --name set21
+    set22:
+        <<: *common-variables
+        command: >
+          --range 1,281
+          --draws 200000000
+          --replacement no
+          --selections 6
+          --name set22
+    set23:
+        <<: *common-variables
+        command: >
+          --range 1,307
+          --draws 500000000
+          --replacement no
+          --selections 6
+          --name set23
+    set24:
+        <<: *common-variables
+        command: >
+          --range 1,364
+          --draws 500000000
+          --replacement no
+          --selections 6
+          --name set24
+    set29:
+        <<: *common-variables
+        command: >
+          --range 1,20
+          --draws 20000000
+          --replacement yes
+          --selections 3
+          --name set29
+    set30:
+        <<: *common-variables
+        command: >
+          --range 1,24
+          --draws 20000000
+          --replacement yes
+          --selections 3
+          --name set30
+    set31:
+        <<: *common-variables
+        command: >
+          --range 1,29
+          --draws 20000000
+          --replacement yes
+          --selections 3
+          --name set31
+    set32:
+        <<: *common-variables
+        command: >
+          --range 1,35
+          --draws 50000000
+          --replacement yes
+          --selections 4
+          --name set32
+    set33:
+        <<: *common-variables
+        command: >
+          --range 1,42
+          --draws 50000000
+          --replacement yes
+          --selections 4
+          --name set33
+    set34:
+        <<: *common-variables
+        command: >
+          --range 1,50
+          --draws 50000000
+          --replacement yes
+          --selections 5
+          --name set34
+    set35:
+        <<: *common-variables
+        command: >
+          --range 1,60
+          --draws 50000000
+          --replacement yes
+          --selections 6
+          --name set35
+    set36:
+        <<: *common-variables
+        command: >
+          --range 1,72
+          --draws 100000000
+          --replacement yes
+          --selections 7
+          --name set36
+    set37:
+        <<: *common-variables
+        command: >
+          --range 1,86
+          --draws 100000000
+          --replacement yes
+          --selections 8
+          --name set37
+    set38:
+        <<: *common-variables
+        command: >
+          --range 1,103
+          --draws 100000000
+          --replacement yes
+          --selections 9
+          --name set38
+    set39:
+        <<: *common-variables
+        command: >
+          --range 1,123
+          --draws 100000000
+          --replacement yes
+          --selections 10
+          --name set39
+    set40:
+        <<: *common-variables
+        command: >
+          --range 1,147
+          --draws 100000000
+          --replacement yes
+          --selections 11
+          --name set40
+    set41:
+        <<: *common-variables
+        command: >
+          --range 1,176
+          --draws 200000000
+          --replacement yes
+          --selections 15
+          --name set41
+    set42:
+        <<: *common-variables
+        command: >
+          --range 1,211
+          --draws 100000000
+          --replacement yes
+          --selections 17
+          --name set42
+    set43:
+        <<: *common-variables
+        command: >
+          --range 1,253
+          --draws 100000000
+          --replacement yes
+          --selections 28
+          --name set43
+    set44:
+        <<: *common-variables
+        command: >
+          --range 1,303
+          --draws 50000000
+          --replacement yes
+          --selections 35
+          --name set44
+    set45:
+        <<: *common-variables
+        command: >
+          --range 1,363
+          --draws 50000000
+          --replacement yes
+          --selections 42
+          --name set45
+    set46:
+        <<: *common-variables
+        command: >
+          --range 1,435
+          --draws 50000000
+          --replacement yes
+          --selections 55
+          --name set46
+    set47:
+        <<: *common-variables
+        command: >
+          --range 1,521
+          --draws 50000000
+          --replacement yes
+          --selections 60
+          --name set47
+    set48:
+        <<: *common-variables
+        command: >
+          --range 1,624
+          --draws 50000000
+          --replacement yes
+          --selections 71
+          --name set48
+    set49:
+        <<: *common-variables
+        command: >
+          --range 1,748
+          --draws 20000000
+          --replacement yes
+          --selections 85
+          --name set49
+    set50:
+        <<: *common-variables
+        command: >
+          --range 1,896
+          --draws 20000000
+          --replacement yes
+          --selections 98
+          --name set50
+    set51:
+        <<: *common-variables
+        command: >
+          --range 1,1074
+          --draws 20000000
+          --replacement yes
+          --selections 120
+          --name set51
+    set52:
+        <<: *common-variables
+        command: >
+          --range 1,1287
+          --draws 10000000
+          --replacement yes
+          --selections 242
+          --name set52
+    set53:
+        <<: *common-variables
+        command: >
+          --range 1,1542
+          --draws 5000000
+          --replacement yes
+          --selections 330
+          --name set53
+    set54:
+        <<: *common-variables
+        command: >
+          --range 1,1848
+          --draws 5000000
+          --replacement yes
+          --selections 420
+          --name set54
+    set55:
+        <<: *common-variables
+        command: >
+          --range 1,2214
+          --draws 5000000
+          --replacement yes
+          --selections 550
+          --name set55
+    set56:
+        <<: *common-variables
+        command: >
+          --range 1,2653
+          --draws 5000000
+          --replacement yes
+          --selections 625
+          --name set56
+    set57:
+        <<: *common-variables
+        command: >
+          --range 1,524288
+          --draws 2000000
+          --replacement yes
+          --selections 730
+          --name set57
+    set58:
+        <<: *common-variables
+        command: >
+          --range 1,616157
+          --draws 2000000
+          --replacement yes
+          --selections 820
+          --name set58
+    set59:
+        <<: *common-variables
+        command: >
+          --range 1,850891
+          --draws 1000000
+          --replacement yes
+          --selections 950
+          --name set59
+    set60:
+        <<: *common-variables
+        command: >
+          --range 1,1000000
+          --draws 1000000
+          --replacement yes
+          --selections 1000
+          --name set60

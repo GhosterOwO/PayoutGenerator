@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+    collector:
+        image: rng-collector
+        hostname: alfa-host
+        restart: always
+        volumes:
+            - ./logs:/workspace/logs/
+        environment:
+            - TZ=Asia/Taipei
+        ports:
+            - "8654:8654"
+        depends_on:
+          - redis
+    redis:
+        extends:
+            file: common-services.yml
+            service: redis
+        ports:
+            - "8653:6379"

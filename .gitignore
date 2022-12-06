@@ -1,0 +1,11 @@
+/logs/*
+/assets/*.go
+/*.exe
+/.sanitize
+/*.log
+/volumes/*
+/.env
+/logs-*/*
+/*.report
+/release/*
+/assets/logs/*

@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+    redis:
+        restart: always
+        image: redis:alpine
+        hostname: redis-host
+        healthcheck:
+            test: ["CMD", "redis-cli", "ping"]
+            interval: 1s
+            timeout: 3s
+            retries: 30
+    balancer:
+        restart: always
+        image: haproxytech/haproxy-debian:2.4
+        environment:
+            - TZ=Asia/Taipei
+        volumes:
+            - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+        ports:
+            - "8654:8654"
+            - "8085:8085"

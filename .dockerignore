@@ -1,0 +1,12 @@
+/*.exe
+/*.dll
+/*.ps1
+/*.log
+/*.report
+/*.zip
+/logs/*
+/logs-*/*
+/*.txt
+/volumes/*
+/release/*
+/assets/logs/*

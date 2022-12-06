@@ -1,0 +1,69 @@
+version: "3.8"
+
+x-common-variables: &common-variables
+    restart: always
+    image: rng-collector
+    environment:
+        - TZ=Asia/Taipei
+    depends_on:
+        - redis
+
+services:
+    alfa:
+        <<: *common-variables
+        hostname: alfa-host
+        volumes:
+            - collector-data:/workspace/logs/
+        command: --output logs/alfa --jobs 40960 --worker 32
+    bravo:
+        <<: *common-variables
+        hostname: bravo-host
+        volumes:
+            - collector-data:/workspace/logs/
+        command: --output logs/bravo --jobs 40960 --worker 32
+    charlie:
+        <<: *common-variables
+        hostname: charlie-host
+        volumes:
+            - collector-data:/workspace/logs/
+        command: --output logs/charlie --jobs 40960 --worker 32
+    delta:
+        <<: *common-variables
+        hostname: delta-host
+        volumes:
+            - collector-data:/workspace/logs/
+        command: --output logs/delta --jobs 40960 --worker 32
+    echo:
+        <<: *common-variables
+        hostname: echo-host
+        volumes:
+            - collector-data:/workspace/logs/
+        command: --output logs/echo --jobs 40960 --worker 32
+    foxtrot:
+        <<: *common-variables
+        hostname: foxtrot-host
+        volumes:
+            - collector-data:/workspace/logs/
+        command: --output logs/foxtrot --jobs 40960 --worker 32
+    redis:
+        extends:
+            file: common-services.yml
+            service: redis
+        ports:
+            - "8653:6379"
+        volumes:
+            - ./volumes/redis-data:/data
+        command: redis-server --maxmemory 1GB
+    balancer:
+        extends:
+            file: common-services.yml
+            service: balancer
+
+volumes:
+  collector-data:
+    driver: local
+    driver_opts:
+      type: cifs
+      o: username=${NAS_USERNAME},password=${NAS_PASSWORD}
+      device: "//${NAS_HOST}/td03/.volumes/collector"
+
